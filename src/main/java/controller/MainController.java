@@ -27,7 +27,7 @@ public class MainController {
 	}
 	
 	//메인
-	@RequestMapping(value = "/main.do")
+	@RequestMapping(value = "/main.nhn")
 	public String main() {
 		return "member/main";
 	}

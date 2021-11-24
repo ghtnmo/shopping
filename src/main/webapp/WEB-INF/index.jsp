@@ -9,7 +9,7 @@
 <body>
 
 <script>
-	location.href="main.do";
+	location.href="main.nhn";
 </script>
 </body>
 </html>
