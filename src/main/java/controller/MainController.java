@@ -26,4 +26,9 @@ public class MainController {
 		return "member/idcheckResult";
 	}
 	
+	//메인
+	@RequestMapping(value = "/main.do")
+	public String main() {
+		return "member/main";
+	}
 }
