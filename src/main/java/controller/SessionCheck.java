@@ -13,7 +13,7 @@ public class SessionCheck {
 			HttpSession session = request.getSession();
 			String id = (String)session.getAttribute("id");
 			if (id == null || id.equals(""))  {		
-				response.sendRedirect("member_login.nhn");	// 세션이 없으면 로그인 폼으로 이동
+				response.sendRedirect("main.nhn");	// 세션이 없으면 로그인 폼으로 이동
 				return false;
 			}
 			return true;
