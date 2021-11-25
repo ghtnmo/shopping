@@ -1,5 +1,6 @@
 package model;
 
+
 public class MemberBean {
 	private int mem_code; 
 	private String mem_id;
