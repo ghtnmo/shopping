@@ -28,6 +28,6 @@ public class MainController {
 	@RequestMapping(value = "/main.nhn")
 	public String main() {
 		
-		return "member/main";
+		return "/main";
 	}
 }
