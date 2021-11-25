@@ -15,7 +15,6 @@ public class MainController {
 	@Autowired
 	private MemberServiceImpl memberService;
 	
-	//ID중복검사 ajax 함수로 처리
 	@RequestMapping(value = "/member_idcheck.nhn", method = RequestMethod.POST)
 	public String member_idcheck(@RequestParam("memberid") String id, Model model) throws Exception{
 		System.out.println("id: " + id);
@@ -25,9 +24,8 @@ public class MainController {
 		
 		return "member/idcheckResult";
 	}
-	
-	//메인
-	@RequestMapping("/main.nhn")
+
+	@RequestMapping(value = "/main.nhn")
 	public String main() {
 		
 		return "member/main";
