@@ -23,11 +23,14 @@
 	<!-- ViewResolver -->
 	<beans:bean id="internalResourceViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="jsp/" />
+		<beans:property name="prefix" value="/jsp/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	<!-- Component, Controller, Service, Repository	어노테이션이 붙은 클래스의 빈을 자동 생성하도록 설정 -->
-	<context:component-scan base-package="controller,service,dao" />
+	<context:component-scan base-package="controller" />
+	<context:component-scan base-package="service" />
+	<context:component-scan base-package="dao"/>
+	<context:component-scan base-package="util" />
 	
 	
 	<!-- 인터셉터 설정 -->	

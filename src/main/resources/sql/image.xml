@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="image">
+    
+    <insert id="insertImage" parameterType="image">
+    	<![CDATA[
+        insert into t_image (image_code,image_name,image_path,image_size,image_cdate)
+        values ( t_image_code_seq.nextval, #{image_name},#{image_path},#{image_size},sysdate)
+        ]]>
+    </insert>
+
+    
+</mapper>
+
+
+

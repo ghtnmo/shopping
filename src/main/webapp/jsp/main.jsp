@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>나색: 나만의 색상을 찾기</title>
+		<title>남성 프리미엄 19샵</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -53,7 +53,7 @@
 								</section>
 
 							<!-- Section -->
-								<section>
+<!-- 								<section>
 									<header class="major">
 										<h2>회사 소개</h2>
 									</header>
@@ -88,9 +88,9 @@
 										</article>
 									</div>
 								</section>
-
+ -->
 							<!-- Section -->
-								<section>
+<!-- 								<section> -->
 									<header class="major">
 										<h2>Ipsum sed dolor</h2>
 									</header>
@@ -184,7 +184,7 @@
 								</nav>
 
 							<!-- Section -->
-								<section>
+<!-- 								<section>
 									<header class="major">
 										<h2>색상 소개</h2>
 									</header>
@@ -205,19 +205,23 @@
 									<ul class="actions">
 										<li><a href="#" class="button">More</a></li>
 									</ul>
-								</section>
+								</section> -->
 
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Get in touch</h2>
+										<h2 class="icon solid fa-phone"> 8877-8373</h2>
 									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
+										<li style="padding:0;">
+											<b>1번 : 배송 / 교환 / 환불관련<br/>2번 : 결제 / 회원관련</b>
+											<p>오전 9시 ~ 오후 6시 / 토,일,휴일 휴무</p>
+										</li>
+										<li style="padding-top:20px; padding-left:0;">
+											- 전화 전 자주 묻는 질문을 확인하세요.<br/>
+											- 1:1문의를 통해서도 상담이 가능합니다.<br/>
+											- 상품 문의는 각 상품 Q&A를 이용하세요.<br/>
+										</li>
 									</ul>
 								</section>
 

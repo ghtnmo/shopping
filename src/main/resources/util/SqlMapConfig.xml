@@ -3,11 +3,14 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias alias="member" type="model.MemberBean" />		
+		<typeAlias alias="member" type="model.MemberBean" />
+		<typeAlias alias="image" type="model.ImageBean" />		
 	</typeAliases>
 
+	
 	<mappers>
-		<mapper resource="sql/member.xml" />			
+		<mapper resource="sql/member.xml" />	
+		<mapper resource="sql/image.xml" />			
 	</mappers>
 </configuration>
 

@@ -32,8 +32,8 @@
 	<!-- 스프링 jdbc 즉 스프링으로 oracle 디비 연결 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<!-- <property name="configLocation"	value="classpath:util/SqlMapConfig.xml" />
-		<property name="mapperLocations" value="classpath:sql/*.xml" /> -->
+		<property name="configLocation"	value="classpath:util/SqlMapConfig.xml" />
+<!-- 		<property name="mapperLocations" value="classpath:sql/*.xml" /> -->
 	</bean>
 	
 
@@ -41,6 +41,11 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean><!-- mybatis ORM DB 연동 프레임웍 연결 -->
+	
+	<!-- 파일저장위한 multipart resolver -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	  <property name="maxUploadSize" value="-1"></property>
+	</bean>
 
 
 	<!-- 트랜잭션 매니저 설정(트랜잭션 처리를 위한 객체를 생성) -->

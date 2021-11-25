@@ -11,9 +11,9 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.myhome.myspring">
-		<level value="info" />
-	</logger>
+<!-- 	<logger name="dao">
+		<level value="debug" />
+	</logger> -->
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
@@ -34,7 +34,7 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="warn" />
+		<priority value="debug" />
 		<appender-ref ref="console" />
 	</root>
 	
