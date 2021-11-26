@@ -30,9 +30,13 @@
 					<c:forEach var="item" items="${itemList}">
 						<article>
 						<a href="#" class="image"><img src="/images/${item.item_thumbnail}" style="height:300px;" alt="" /></a>
+						<h5 style="color: #8e1f29;">리뷰 34</h5>
 						<h3>${item.item_title}</h3>
 						<p style="margin: 0 0 10px 0;">재고 : ${item.item_stock}개</p>
-						<b style="margin: 0 0 10px 0;">가격 : ${item.item_price}원</b>
+						
+						<b style="color: #8e1f29; font-size:7px;">${item.item_discount}%</b>
+						<b class="discounted_price" style="margin: 0 0 10px 0;">${item.item_discount}</b>
+						<span style="font-size:7px; text-decoration:line-through;" class="origin_price">${item.item_price}</span>
 					</article>
 					</c:forEach>
 				</div>
@@ -65,6 +69,19 @@
 	<script src="/assets/js/breakpoints.min.js"></script>
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
+	<script>
+		//할인된가격 계산 자바스크립트로 처리함
+		$(document).ready(function(){
+			$(".discounted_price").each(function(index,element){
+				var origin_price = $(element).next().html();
+				var discounted_rate= 1-($(element).html() /100);
+				var discounted_price = origin_price * discounted_rate;
+				discounted_price = Math.floor(discounted_price);
+				console.log(discounted_price);
+				$(element).html(discounted_price);
+			})
+		});
+	</script>
 
 </body>
 </html>
