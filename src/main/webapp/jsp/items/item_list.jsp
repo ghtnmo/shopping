@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <!--
 	Editorial by HTML5 UP
@@ -35,56 +36,17 @@
 							<li><a href="#" class="button">리뷰 : 150</a></li>
 						</ul>
 					</article>
-					<article>
-						<a href="#" class="image"><img src="/images/pic02.jpg" alt="" /></a>
-						<h3>Nulla amet dolore</h3>
-						<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-							dolore. Proin aliquam facilisis ante interdum. Sed nulla amet
-							lorem feugiat tempus aliquam.</p>
+					<c:forEach var="item" items="${itemList}">
+						<article>
+						<a href="#" class="image"><img src="/images/${item.item_thumbnail}" alt="" /></a>
+						<h3>${item.item_title}</h3>
+						<p>재고 : ${item.item_stock}개</p>
+						<b>가격 : ${item.item_price}원</b>
 						<ul class="actions">
-							<li><a href="#" class="button">More</a></li>
+							<li><a href="#" class="button">리뷰 : 150</a></li>
 						</ul>
 					</article>
-					<article>
-						<a href="#" class="image"><img src="/images/pic03.jpg" alt="" /></a>
-						<h3>Tempus ullamcorper</h3>
-						<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-							dolore. Proin aliquam facilisis ante interdum. Sed nulla amet
-							lorem feugiat tempus aliquam.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">More</a></li>
-						</ul>
-					</article>
-					<article>
-						<a href="#" class="image"><img src="/images/pic04.jpg" alt="" /></a>
-						<h3>Sed etiam facilis</h3>
-						<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-							dolore. Proin aliquam facilisis ante interdum. Sed nulla amet
-							lorem feugiat tempus aliquam.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">More</a></li>
-						</ul>
-					</article>
-					<article>
-						<a href="#" class="image"><img src="/images/pic05.jpg" alt="" /></a>
-						<h3>Feugiat lorem aenean</h3>
-						<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-							dolore. Proin aliquam facilisis ante interdum. Sed nulla amet
-							lorem feugiat tempus aliquam.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">More</a></li>
-						</ul>
-					</article>
-					<article>
-						<a href="#" class="image"><img src="/images/pic06.jpg" alt="" /></a>
-						<h3>Amet varius aliquam</h3>
-						<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-							dolore. Proin aliquam facilisis ante interdum. Sed nulla amet
-							lorem feugiat tempus aliquam.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">More</a></li>
-						</ul>
-					</article>
+					</c:forEach>
 				</div>
 
 			</div>

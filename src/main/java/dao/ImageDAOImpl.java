@@ -13,16 +13,8 @@ public class ImageDAOImpl {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public int checkMemberId(String id) throws Exception{
-		int re = -1;
-		MemberBean mb = sqlSession.selectOne("login_check", id);
-		if(mb != null) {
-			re = 1;
-		}
-		return re;
-	}
 	public int insertImage(ImageBean image) throws Exception{
-		int re = -1;
+		int re = 0;
 		System.out.println("ssss");
 		re = sqlSession.insert("insertImage", image);
 		return re;

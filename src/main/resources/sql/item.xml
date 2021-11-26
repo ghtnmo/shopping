@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="item">
+    
+    <insert id="insertItem" parameterType="item">
+    	<![CDATA[
+        insert into t_item (item_code,item_title,item_price,item_discount,item_stock,item_description,item_thumbnail,item_cdate)
+        values ( t_item_code_seq.nextval, #{item_title},#{item_price},#{item_discount},#{item_stock},#{item_description},#{item_thumbnail},sysdate)
+        ]]>
+    </insert>
+	
+	<select id="listItem" parameterType="hashmap" resultType="item">
+		<![CDATA[
+		select a.item_code,a.item_title,a.item_price,a.item_discount,a.item_stock,a.item_cdate,b.image_name as item_thumbnail,des as item_description 
+		from 
+		    (
+		        select a.*,b.image_name as des
+		        from t_item a
+		        ,t_image b
+		        where a.item_description = b.image_code
+		    ) a
+		    ,t_image b
+		where
+		    a.item_thumbnail = b.image_code
+		    and rownum >= #{startNum} and rownum < #{endNum}
+		order by item_code desc
+		]]>
+	</select>
+	
+	<select id="listItemCount" resultType="Integer">
+		<![CDATA[
+		select count(*) from t_item
+		]]>
+	</select>
+</mapper>
+
+
+

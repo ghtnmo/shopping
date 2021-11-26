@@ -1,6 +1,6 @@
 package model;
 
-import java.sql.Blob;
+
 
 public class ImageBean {
 	private int image_code;

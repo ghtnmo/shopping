@@ -5,12 +5,14 @@
 	<typeAliases>
 		<typeAlias alias="member" type="model.MemberBean" />
 		<typeAlias alias="image" type="model.ImageBean" />		
+		<typeAlias alias="item" type="model.ItemBean" />		
 	</typeAliases>
 
 	
 	<mappers>
 		<mapper resource="sql/member.xml" />	
-		<mapper resource="sql/image.xml" />			
+		<mapper resource="sql/image.xml" />		
+		<mapper resource="sql/item.xml" />			
 	</mappers>
 </configuration>
 
