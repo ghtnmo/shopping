@@ -12,19 +12,17 @@
 	
 	<select id="listItem" parameterType="hashmap" resultType="item">
 		<![CDATA[
-		select a.item_code,a.item_title,a.item_price,a.item_discount,a.item_stock,a.item_cdate,b.image_name as item_thumbnail,des as item_description 
+		select rownum,a.item_code,a.item_title,a.item_price,a.item_discount,a.item_stock,a.item_cdate,b.image_name as item_thumbnail,des as item_description 
 		from 
-		    (
-		        select a.*,b.image_name as des
-		        from t_item a
-		        ,t_image b
-		        where a.item_description = b.image_code
-		    ) a
-		    ,t_image b
-		where
-		    a.item_thumbnail = b.image_code
-		    and rownum >= #{startNum} and rownum < #{endNum}
-		order by item_code desc
+		    (select x.*,y.image_name as des,ROW_NUMBER() OVER(order by x.item_code desc) rn
+		    from t_item x 
+		        ,t_image y 
+		    where x.item_description = y.image_code
+		    ) a 
+		    ,t_image b 
+		where a.item_thumbnail = b.image_code
+		and rn>=#{startNum}
+		and rn<=#{endNum}
 		]]>
 	</select>
 	

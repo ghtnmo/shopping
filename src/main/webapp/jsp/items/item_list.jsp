@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
@@ -27,116 +27,36 @@
 					<h2 style="width:100%; padding-top:50px;">BEST</h2>
 				</header>
 				<div class="posts">
-					<article>
-						<a href="#" class="image"><img src="/images/item_1.jpg" alt="" /></a>
-						<h3>당일출고_[BOX소가죽]7cm키높이수제화 첼시부츠</h3>
-						<p>(4) 240 ~ 280 (7cm)</p>
-						<b>56,000원</b>
-						<ul class="actions">
-							<li><a href="#" class="button">리뷰 : 150</a></li>
-						</ul>
-					</article>
 					<c:forEach var="item" items="${itemList}">
 						<article>
-						<a href="#" class="image"><img src="/images/${item.item_thumbnail}" alt="" /></a>
+						<a href="#" class="image"><img src="/images/${item.item_thumbnail}" style="height:300px;" alt="" /></a>
 						<h3>${item.item_title}</h3>
-						<p>재고 : ${item.item_stock}개</p>
-						<b>가격 : ${item.item_price}원</b>
-						<ul class="actions">
-							<li><a href="#" class="button">리뷰 : 150</a></li>
-						</ul>
+						<p style="margin: 0 0 10px 0;">재고 : ${item.item_stock}개</p>
+						<b style="margin: 0 0 10px 0;">가격 : ${item.item_price}원</b>
 					</article>
 					</c:forEach>
 				</div>
-
+				<div class="paging" style="display: block; text-align: center;">		
+					<c:if test="${paging.startPage != 1 }">
+						<a href="/items/list/best.nhn?page=${paging.startPage - 1 }">&lt;</a>
+					</c:if>
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+						<c:choose>
+							<c:when test="${p == paging.nowPage }">
+								<b>${p }</b>
+							</c:when>
+							<c:when test="${p != paging.nowPage }">
+								<a href="/items/list/best.nhn?page=${p }">${p }</a>
+							</c:when>
+						</c:choose>
+					</c:forEach>
+					<c:if test="${paging.endPage != paging.lastPage}">
+						<a href="/items/list/best.nhn?page=${paging.endPage+1 }">&gt;</a>
+					</c:if>
+				</div>
 			</div>
 		</div>
-
-		<!-- Sidebar -->
-		<div id="sidebar">
-			<div class="inner">
-
-				<!-- Search -->
-				<section id="search" class="alt">
-					<form method="post" action="#">
-						<input type="text" name="query" id="query" placeholder="Search" />
-					</form>
-				</section>
-
-				<!-- Menu -->
-				<nav id="menu">
-					<header class="major">
-						<h2>메뉴</h2>
-					</header>
-					<ul>
-						<li><a href="index.html">홈페이지</a></li>
-						<li><a href="generic.html">회사 소개</a></li>
-						<li><a href="elements.html">상품 소개</a></li>
-						<li><span class="opener">오늘의 추천</span>
-							<ul>
-								<li><a href="#">Lorem Dolor</a></li>
-								<li><a href="#">Ipsum Adipiscing</a></li>
-								<li><a href="#">Tempus Magna</a></li>
-								<li><a href="#">Feugiat Veroeros</a></li>
-							</ul></li>
-						<li><a href="#">디자인 예시</a></li>
-						<li><a href="#">나만의 색상 분석</a></li>
-					</ul>
-				</nav>
-
-				<!-- Section -->
-				<!-- 								<section>
-									<header class="major">
-										<h2>색상 소개</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="/images/pic07.jpg" alt="" /></a>
-											<p>오늘의 쿨톤 의상 컨셉에 대해서 소개합니다.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="/images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section> -->
-
-				<!-- Section -->
-				<section>
-					<header class="major">
-						<h2 class="icon solid fa-phone">8877-8373</h2>
-					</header>
-					<ul class="contact">
-						<li style="padding: 0;"><b>1번 : 배송 / 교환 / 환불관련<br />2번 :
-								결제 / 회원관련
-						</b>
-							<p>오전 9시 ~ 오후 6시 / 토,일,휴일 휴무</p></li>
-						<li style="padding-top: 20px; padding-left: 0;">- 전화 전 자주 묻는
-							질문을 확인하세요.<br /> - 1:1문의를 통해서도 상담이 가능합니다.<br /> - 상품 문의는 각 상품
-							Q&A를 이용하세요.<br />
-						</li>
-					</ul>
-				</section>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<p class="copyright">
-						&copy; Untitled. All rights reserved. Demo /images: <a
-							href="https://unsplash.com">Unsplash</a>. Design: <a
-							href="https://html5up.net">HTML5 UP</a>.
-					</p>
-				</footer>
-
-			</div>
-		</div>
-
+		<%@include file="/jsp/include/sidebar.jsp"%>
 	</div>
 
 	<!-- Scripts -->

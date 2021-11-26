@@ -39,6 +39,7 @@
 	  <property name="maxUploadSize" value="-1"></property>
 	</bean>
 
+	
 
 	<!-- 트랜잭션 매니저 설정(트랜잭션 처리를 위한 객체를 생성) -->
 	<!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 

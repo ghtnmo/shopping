@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import model.ImageBean;
@@ -27,6 +28,7 @@ import service.ImageServiceImpl;
 import service.ItemServiceImpl;
 import service.MemberServiceImpl;
 import util.FileUtil;
+import util.PagingVO;
 
 
 @Controller
@@ -41,16 +43,18 @@ public class ItemController {
 	@RequestMapping(value = "/items/list/best.nhn")
 	public String list(@RequestParam(value="page", defaultValue="1") int page,Model model) throws Exception {
 		int listCnt = itemService.listItemCount();
-		int pageSize = 10;
-		int totalPage = (int) Math.ceil(listCnt/(double)pageSize);
-		int endNum = page * pageSize;
-		int startNum = endNum -(pageSize -1);
+		int pageSize = 12;
+		
+		//페이징
+		PagingVO vo = new PagingVO(listCnt,page,pageSize);
 		Map<String,String> map = new HashMap();
-		map.put("startNum",String.valueOf(startNum));
-		map.put("endNum",String.valueOf(endNum));
+		map.put("startNum",String.valueOf(vo.getStart()));
+		map.put("endNum",String.valueOf(vo.getEnd()));
 		List<ItemBean> itemList = itemService.listItem(map);
 		
+		
 		model.addAttribute("itemList", itemList);
+		model.addAttribute("paging", vo);
 		return "/items/item_list";
 	}
 	
@@ -64,7 +68,8 @@ public class ItemController {
 	}
 	//이미지 저장페이지
 	@RequestMapping(value = "/uploadImage", method = RequestMethod.POST)
-    public String uploadImage(@RequestParam("file") MultipartFile file,HttpServletRequest request) {
+	@ResponseBody
+    public HashMap<String,String> uploadImage(@RequestParam("file") MultipartFile file,HttpServletRequest request) {
  
         System.out.println("파일 이름 : " + file.getOriginalFilename());
         System.out.println("파일 크기 : " + file.getSize());
@@ -72,12 +77,16 @@ public class ItemController {
 
         FU.fileSave(file);
         
-        return "uploadok";
+        //JsonResponse
+        HashMap<String,String> map = new HashMap<String,String>();
+        map.put("result","200");
+        
+        return map;
     }
 	
 	//아이템 저장페이지
 	@RequestMapping(value = "/uploadItem", method = RequestMethod.POST)
-    public String uploadItem( @RequestParam Map<String, String> param) {
+    public HashMap<String,String> uploadItem( @RequestParam Map<String, String> param) {
 		
 		String item_title = param.get("item_title");
 		int item_price =   Integer.parseInt(param.get("item_price"));
@@ -99,7 +108,11 @@ public class ItemController {
 			e.printStackTrace();
 		}
 		
-        return "uploadok";
+		//JsonResponse
+        HashMap<String,String> map = new HashMap<String,String>();
+        map.put("result","200");
+        
+        return map;
     }
 
 	

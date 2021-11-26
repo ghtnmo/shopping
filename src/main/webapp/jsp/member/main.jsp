@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <!--
 	Editorial by HTML5 UP
@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>³ª»ö: ³ª¸¸ÀÇ »ö»óÀ» Ã£±â</title>
+		<title>ë‚˜ìƒ‰: ë‚˜ë§Œì˜ ìƒ‰ìƒì„ ì°¾ê¸°</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -24,10 +24,10 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>³ª»ö</strong> '³ª¸¸ÀÇ »ö»ó Ã£±â'</a>
+									<a href="index.html" class="logo"><strong>ë‚˜ìƒ‰</strong> 'ë‚˜ë§Œì˜ ìƒ‰ìƒ ì°¾ê¸°'</a>
 									<ul class="icons">
-										<li><a href="member_login.nhn" class="member_login"><span class="label">·Î±×ÀÎ</span></a></li>
-										<li><a href="member_join.nhn" class="member_join"><span class="label">È¸¿ø°¡ÀÔ</span></a></li>
+										<li><a href="member_login.nhn" class="member_login"><span class="label">ë¡œê·¸ì¸</span></a></li>
+										<li><a href="member_join.nhn" class="member_join"><span class="label">íšŒì›ê°€ìž…</span></a></li>
 									</ul>
 								</header>
 
@@ -35,13 +35,13 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>'³ª»ö' <br />
-											³ª¸¸ÀÇ »ö»ó Ã£±â</h1>
-											<p>´©±¸¿¡°Ô³ª ¾î¿ï¸®´Â »ö»óÀº Á¸ÀçÇÕ´Ï´Ù.</p>
+											<h1>'ë‚˜ìƒ‰' <br />
+											ë‚˜ë§Œì˜ ìƒ‰ìƒ ì°¾ê¸°</h1>
+											<p>ëˆ„êµ¬ì—ê²Œë‚˜ ì–´ìš¸ë¦¬ëŠ” ìƒ‰ìƒì€ ì¡´ìž¬í•©ë‹ˆë‹¤.</p>
 										</header>
-										<p>'³ª»ö'Àº ÀÚ½Å¸¸ÀÇ »ö»óÀ» Ã£¾ÆÁÖ´Â À¥ ¼­ºñ½ºÀÔ´Ï´Ù. ÀÚ½ÅÀÇ ÇÇºÎ»öÀ» ÃÔ¿µÇÏ¿© ¾÷·ÎµåÇÏ¸é, ¿©·¯ ºÐÀÇ ÇÇºÎ»ö°ú µ¿ÀÏÇÑ ¿À´ÃÀÇ ÀÇ»ó ÄÁ¼ÁÀ» ¾Ë·ÁÁÝ´Ï´Ù. ¸ðµç ¼­ºñ½º´Â ¹«·áÀÔ´Ï´Ù. Áö±Ý ¹Ù·Î ½ÃÀÛÇØº¸¼¼¿ä!</p>
+										<p>'ë‚˜ìƒ‰'ì€ ìžì‹ ë§Œì˜ ìƒ‰ìƒì„ ì°¾ì•„ì£¼ëŠ” ì›¹ ì„œë¹„ìŠ¤ìž…ë‹ˆë‹¤. ìžì‹ ì˜ í”¼ë¶€ìƒ‰ì„ ì´¬ì˜í•˜ì—¬ ì—…ë¡œë“œí•˜ë©´, ì—¬ëŸ¬ ë¶„ì˜ í”¼ë¶€ìƒ‰ê³¼ ë™ì¼í•œ ì˜¤ëŠ˜ì˜ ì˜ìƒ ì»¨ì…‰ì„ ì•Œë ¤ì¤ë‹ˆë‹¤. ëª¨ë“  ì„œë¹„ìŠ¤ëŠ” ë¬´ë£Œìž…ë‹ˆë‹¤. ì§€ê¸ˆ ë°”ë¡œ ì‹œìž‘í•´ë³´ì„¸ìš”!</p>
 										<ul class="actions">
-											<li><a href="#" class="button big">´õ ¾Ë¾Æº¸±â</a></li>
+											<li><a href="#" class="button big">ë” ì•Œì•„ë³´ê¸°</a></li>
 										</ul>
 									</div>
 									<span class="image object">
@@ -52,7 +52,7 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>È¸»ç ¼Ò°³</h2>
+										<h2>íšŒì‚¬ ì†Œê°œ</h2>
 									</header>
 									<div class="features">
 										<article>
@@ -142,51 +142,11 @@
 										</article>
 									</div>
 								</section>
-
+						
 						</div>
 					</div>
-
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>¸Þ´º</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">È¨ÆäÀÌÁö</a></li>
-										<li><a href="generic.html">È¸»ç ¼Ò°³</a></li>
-										<li><a href="elements.html">»óÇ° ¼Ò°³</a></li>
-										<li>
-											<span class="opener">¿À´ÃÀÇ ÃßÃµ</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">µðÀÚÀÎ ¿¹½Ã</a></li>
-										<li><a href="#">³ª¸¸ÀÇ »ö»ó ºÐ¼®</a></li>
-									</ul>
-								</nav>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
+					
+					<%@include file="/jsp/include/sidebar.jsp"%>
 
 			</div>
 
