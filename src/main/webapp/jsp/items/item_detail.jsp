@@ -27,9 +27,9 @@
 					<h2 style="width:100%; padding-top:50px;">DETAIL</h2>
 				</header>
 				<!-- 상품 정보 -->				
-				<section style="display:flex; padding:0 ; flex-direction:row;">
-					<img src="/images/${data.item_thumbnail}" style="width:47%;" alt="" />
-					<div style="padding-left:30px; width:auto; display:inline-block;">
+				<section style="display:flex; padding:0 ; flex-direction:row; width:100%;">
+					<img src="/images/${data.item_thumbnail}" style="width:50%;" alt="" />
+					<div style="padding-left:30px; width:50%; display:inline-block;">
 						<h2 style="padding-bottom:30px; border-bottom:2px solid black;">${data.item_title}</h2>
 						<table>
 							<tr>

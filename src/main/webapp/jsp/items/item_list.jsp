@@ -28,16 +28,18 @@
 				</header>
 				<div class="posts">
 					<c:forEach var="item" items="${itemList}">
-						<article>
-						<a href="#" class="image"><img src="/images/${item.item_thumbnail}" style="height:300px;" alt="" /></a>
-						<h5 style="color: #8e1f29;">리뷰 ${item.review_count}</h5>
-						<h3>${item.item_title}</h3>
-						<p style="margin: 0 0 10px 0;">재고 : ${item.item_stock}개</p>
-						
-						<b style="color: #8e1f29; font-size:7px;">${item.item_discount}%</b>
-						<b class="discounted_price" style="margin: 0 0 10px 0;">${item.item_discount}</b>
-						<span style="font-size:7px; text-decoration:line-through;" class="origin_price">${item.item_price}</span>
-					</article>
+							<article>
+								<a href="/items/detail.nhn?item_code=${item.item_code}" class="image">
+									<img src="/images/${item.item_thumbnail}" style="height:300px;" alt="" />
+								</a>
+								<h5 style="color: #8e1f29;">리뷰 ${item.review_count}</h5>
+								<h3>${item.item_title}</h3>
+								<p style="margin: 0 0 10px 0;">재고 : ${item.item_stock}개</p>
+								
+								<b style="color: #8e1f29; font-size:7px;">${item.item_discount}%</b>
+								<b class="discounted_price" style="margin: 0 0 10px 0;">${item.item_discount}</b>
+								<span style="font-size:7px; text-decoration:line-through;" class="origin_price">${item.item_price}</span>
+							</article>
 					</c:forEach>
 				</div>
 				<div class="paging" style="display: block; text-align: center;">		
