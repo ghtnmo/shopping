@@ -10,7 +10,9 @@ public class ItemBean {
 	private String item_description;
 	private String item_thumbnail;
 	private String item_cdate;
+	private int review_count;
 	
+
 	public ItemBean() {}
 	
 	public ItemBean(String item_title, int item_price, int item_discount, int item_stock, String item_description,String item_thumbnail) {
@@ -22,7 +24,14 @@ public class ItemBean {
 		this.item_description = item_description;
 		this.item_thumbnail = item_thumbnail;
 	}
-	
+
+	public int getReview_count() {
+		return review_count;
+	}
+
+	public void setReview_count(int review_count) {
+		this.review_count = review_count;
+	}
 	
 	public String getItem_thumbnail() {
 		return item_thumbnail;

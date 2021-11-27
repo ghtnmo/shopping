@@ -40,33 +40,12 @@ public class ItemController {
 	@Autowired
 	private ItemServiceImpl itemService;
 
-	@RequestMapping(value = "/items/list/best.nhn")
-	public String list(@RequestParam(value="page", defaultValue="1") int page,Model model) throws Exception {
-		int listCnt = itemService.listItemCount();
-		int pageSize = 12;
-		
-		//페이징
-		PagingVO vo = new PagingVO(listCnt,page,pageSize);
-		Map<String,String> map = new HashMap();
-		map.put("startNum",String.valueOf(vo.getStart()));
-		map.put("endNum",String.valueOf(vo.getEnd()));
-		List<ItemBean> itemList = itemService.listItem(map);
-		
-		
-		model.addAttribute("itemList", itemList);
-		model.addAttribute("paging", vo);
-		return "/items/item_list";
-	}
-	
-	
-	
-	
 	//데이터 입력용임시페이지
 	@RequestMapping(value = "/data.nhn")
 	public String data() {
 		return "/test";
 	}
-	//이미지 저장페이지
+	//이미지 저장API
 	@RequestMapping(value = "/uploadImage", method = RequestMethod.POST)
 	@ResponseBody
     public HashMap<String,String> uploadImage(@RequestParam("file") MultipartFile file,HttpServletRequest request) {
@@ -84,7 +63,7 @@ public class ItemController {
         return map;
     }
 	
-	//아이템 저장페이지
+	//아이템 저장API
 	@RequestMapping(value = "/uploadItem", method = RequestMethod.POST)
     public HashMap<String,String> uploadItem( @RequestParam Map<String, String> param) {
 		
@@ -114,6 +93,46 @@ public class ItemController {
         
         return map;
     }
+
+	
+	
+	
+	@RequestMapping(value = "/items/list/best.nhn")
+	public String list(@RequestParam(value="page", defaultValue="1") int page,Model model) throws Exception {
+		int listCnt = itemService.listItemCount();
+		int pageSize = 12;
+		
+		//페이징
+		PagingVO vo = new PagingVO(listCnt,page,pageSize);
+		Map<String,String> map = new HashMap();
+		map.put("startNum",String.valueOf(vo.getStart()));
+		map.put("endNum",String.valueOf(vo.getEnd()));
+		List<ItemBean> itemList = itemService.listItem(map);
+		
+		
+		model.addAttribute("itemList", itemList);
+		model.addAttribute("paging", vo);
+		return "/items/item_list";
+	}
+	
+	@RequestMapping(value = "/items/detail.nhn")
+	public String detail(@RequestParam(value="item_code",defaultValue="0") int item_code, Model model) throws Exception{
+		
+		try {
+			ItemBean data = itemService.detailItem(item_code);
+			
+			if(data == null) {
+				return "error";
+			}
+			
+			model.addAttribute("data", data);
+			return "items/item_detail";
+			
+		}catch(Exception e) {//JsonResponse
+			return "error";
+		}
+		
+	}
 
 	
 }

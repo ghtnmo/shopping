@@ -30,7 +30,7 @@
 					<c:forEach var="item" items="${itemList}">
 						<article>
 						<a href="#" class="image"><img src="/images/${item.item_thumbnail}" style="height:300px;" alt="" /></a>
-						<h5 style="color: #8e1f29;">리뷰 34</h5>
+						<h5 style="color: #8e1f29;">리뷰 ${item.review_count}</h5>
 						<h3>${item.item_title}</h3>
 						<p style="margin: 0 0 10px 0;">재고 : ${item.item_stock}개</p>
 						

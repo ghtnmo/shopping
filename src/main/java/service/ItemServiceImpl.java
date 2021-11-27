@@ -30,4 +30,8 @@ public class ItemServiceImpl {
 	public int listItemCount()throws Exception{
 		return itemDAO.listItemCount();
 	}
+	
+	public ItemBean detailItem(int item_code)throws Exception{
+		return itemDAO.detailItem(item_code);
+	}
 }

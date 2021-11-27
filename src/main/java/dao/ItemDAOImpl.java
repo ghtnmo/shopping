@@ -31,4 +31,8 @@ public class ItemDAOImpl {
 	public int listItemCount()throws Exception{
 		return sqlSession.selectOne("listItemCount");
 	}
+	
+	public ItemBean detailItem(int item_code)throws Exception{
+		return sqlSession.selectOne("detailItem",item_code);
+	}
 }

@@ -12,23 +12,32 @@
 	
 	<select id="listItem" parameterType="hashmap" resultType="item">
 		<![CDATA[
-		select rownum,a.item_code,a.item_title,a.item_price,a.item_discount,a.item_stock,a.item_cdate,b.image_name as item_thumbnail,des as item_description 
+		select 
+			a.*,
+    		GET_REVIEW_COUNT(a.item_code) as review_count
 		from 
-		    (select x.*,y.image_name as des,ROW_NUMBER() OVER(order by x.item_code desc) rn
-		    from t_item x 
-		        ,t_image y 
-		    where x.item_description = y.image_code
-		    ) a 
-		    ,t_image b 
-		where a.item_thumbnail = b.image_code
-		and rn>=#{startNum}
-		and rn<=#{endNum}
+			v_item a
+		where
+			rn <=#{endNum}
+		and 
+			rn>=#{startNum}
 		]]>
 	</select>
 	
 	<select id="listItemCount" resultType="Integer">
 		<![CDATA[
 		select count(*) from t_item
+		]]>
+	</select>
+	<select id="detailItem" parameterType="Integer" resultType="item">
+		<![CDATA[
+		select 
+			a.*,
+			GET_REVIEW_COUNT(a.item_code) as review_count
+		from
+			v_item a
+		where
+			item_code = #{item_code}
 		]]>
 	</select>
 </mapper>
